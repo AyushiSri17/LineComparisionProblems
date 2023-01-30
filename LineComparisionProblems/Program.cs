@@ -8,16 +8,6 @@ namespace LineComparisonProblems
 {
     public class Program
     {
-        public void Compare(double l1, double l2)
-        {
-            int result = l1.CompareTo(l2);
-            if (result > 0)
-                Console.WriteLine("line1 is greater than line2");
-            else if (result < 0)
-                Console.WriteLine("line1 is smaller than line2");
-            else
-                Console.WriteLine("Both the lines are equal");
-        }
         public static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Line Computation Problem");
@@ -43,8 +33,28 @@ namespace LineComparisonProblems
             double length2 = Math.Sqrt((x4 - x3) ^ 2 + (y4 - y3) ^ 2);
             Console.WriteLine("Length of line2 is: "+ length2);
             Program p = new Program();
+            //Calling Equality method
+            p.Equality(length1, length2);
+            //Calling Compare method
             p.Compare(length1, length2);
             Console.ReadLine();
+        }
+        public void Equality(double l1, double l2)
+        {
+            if (l1.Equals(l2))
+                Console.WriteLine("lines are equal");
+            else
+                Console.WriteLine("lines are not equal");
+        }
+        public void Compare(double l1, double l2)
+        {
+            int result = l1.CompareTo(l2);
+            if (result > 0)
+                Console.WriteLine("line1 is greater than line2");
+            else if (result < 0)
+                Console.WriteLine("line1 is smaller than line2");
+            else
+                Console.WriteLine("Both the lines are equal");
         }
     }
 }
